@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="weather-container">
         <div class="left-info">
@@ -14,14 +17,14 @@
                 <p class="date">1 June 2023</p>
                 <p class="location">London, UK</p>
             </div>
-            <div class="today-weather">
-                <div class="weather-icon">☀️</div>
-                <h1 class="weather-temp">23°C</h1>
-                <p class="weather">Sunny</p>
+            <div class="today-weather-info">
+                <div class="today-weather-icon">☀️</div>
+                <p class="today-weather">Sunny</p>
+                <p class="today-weather-temp">23°C</p>
             </div>
         </div>
         <div class="right-info">
-            <ul class="day-list">
+            <ul class="days-list">
                 <li>
                     <span class="weather-icon">☀️</span>
                     <span class="day">Sat</span>
@@ -44,11 +47,12 @@
                 </li>
             </ul>
             <div class="search-bar">
-                <p>🔎</p>
-                <input type="search" name="search-loction" id="search-loction">
+                <p class="search-icon">🔎</p>
+                <input type="search" name="search-loction" id="search-loction" placeholder="Enter Location">
             </div>
         </div>
     </div>
     <script src="main.js"></script>
 </body>
+
 </html>
