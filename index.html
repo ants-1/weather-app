@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/cloudy.png">
 </head>
 
 <body>
@@ -13,42 +14,54 @@
         <div class="left-info">
             <div class="weather-pic"></div>
             <div class="today-info">
-                <h2 class="day-full">Monday</h2>
+                <div class="title">
+                    <h2 class="day-full">Monday</h2>
+                    <img class="toggle-display" src="./icons/right-arrow.png" alt="right icon">
+                </div>
                 <p class="date">1 June 2023</p>
-                <p class="location">London, UK</p>
+                <p><span class="location">London</span>, <span class="country">United Kingdom</span></p>
             </div>
             <div class="today-weather-info">
-                <div class="today-weather-icon">☀️</div>
+                <div class="today-weather-icon"></div>
                 <p class="today-weather">Sunny</p>
                 <p class="today-weather-temp">23°C</p>
             </div>
         </div>
         <div class="right-info">
+            <div class="additional-info">
+                <p>Feels Like: <span class="feels-like">s</span></p>
+                <p>Humidity: <span class="humidity">s</span></p>
+                <p>Wind Speed: <span class="wind-speed">s</span></p>
+            </div>
             <ul class="days-list">
                 <li>
                     <span class="weather-icon">☀️</span>
                     <span class="day">Sat</span>
-                    <span class="day-temp">23°C</span>
+                    <span class="day-temp"></span>
                 </li>
                 <li>
                     <span class="weather-icon">⛅️</span>
                     <span class="day">Sun</span>
-                    <span class="day-temp">25°C</span>
+                    <span class="day-temp"></span>
                 </li>
                 <li>
                     <span class="weather-icon">🌧️</span>
                     <span class="day">Mon</span>
-                    <span class="day-temp">19°C</span>
+                    <span class="day-temp"></span>
                 </li>
                 <li>
-                    <span class="weather-icon">☀️</span>
+                    <span class="weather-icon">🌧️</span>
                     <span class="day">Tue</span>
-                    <span class="day-temp">24°C</span>
+                    <span class="day-temp"></span>
                 </li>
             </ul>
             <div class="search-bar">
                 <p class="search-icon">🔎</p>
-                <input type="search" name="search-loction" id="search-loction" placeholder="Enter Location">
+                <input type="search" name="search-location" id="search-location" placeholder="Search Location">
+            </div>
+            <div class="temp-convert">
+                <span class="celsius active">°C</span>
+                <span class="fahrenheit">°F</span>
             </div>
         </div>
     </div>
