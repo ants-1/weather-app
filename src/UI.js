@@ -2,13 +2,14 @@ import { format, parseISO } from 'date-fns';
 import weather from './weather';
 
 const icons = {
-  rain: '🌧️',
-  drizzle: '🌧️',
-  overcast: '☁️',
-  mist: '☁️',
-  clear: '⛅️',
-  cloudy: '⛅️',
-  sunny: '☀️',
+  rain: 'icons/raining.png',
+  drizzle: 'icons/raining-cloudy.png',
+  overcast: 'icons/cloudy.png',
+  mist: 'icons/mist.png',
+  clear: 'icons/sunny-cloudy.png',
+  cloudy: 'icons/cloudy.png',
+  sunny: 'icons/sunny.png',
+  snow: 'icons/snow.png',
   default: 'Error',
 };
 
@@ -20,6 +21,7 @@ const imageUrls = {
   clear: 'images/cloudy.jpeg',
   mist: 'images/cloudy.jpeg',
   sunny: 'images/sunny.jpeg',
+  snow: 'images/snow.jpeg',
   default: '',
 };
 
@@ -47,7 +49,7 @@ const UI = async () => {
     const formattedDate = format(date, 'dd/MM/yy, HH:mm');
     const celsius = document.querySelector('.celsius');
 
-    mainWeatherIcon.textContent = icon;
+    mainWeatherIcon.src = icon;
     backgroundImage.style.background = `url("${imageUrl}")`;
     backgroundImage.style.backgroundPosition = 'center';
     backgroundImage.style.backgroundSize = 'cover';
@@ -90,7 +92,7 @@ const UI = async () => {
 
       const matchWeather = Object.keys(icons).find((key) => forecastWeather.toLowerCase().includes(key));
       const icon = icons[matchWeather];
-      forecastWeatherIcons[index].textContent = icon;
+      forecastWeatherIcons[index].src = icon;
     });
   };
 
