@@ -97,7 +97,8 @@ body {
 }
 
 .today-weather-icon {
-  font-size: 48px;
+  width: 40px;
+  height: 40px;
 }
 
 .today-weather-temp {
@@ -152,6 +153,11 @@ body {
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
+}
+
+.weather-icon {
+  width: 30px;
+  height: 30px;
 }
 
 .search-bar {
