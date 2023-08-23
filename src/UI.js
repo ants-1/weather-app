@@ -97,45 +97,52 @@ const UI = async () => {
   };
 
   const convertTemp = (data) => {
-    const convertBtn = document.querySelector('.temp-convert');
+    const convertBtn = document.getElementById('temp-convert');
     const celsius = document.querySelector('.celsius');
     const fahrenheit = document.querySelector('.fahrenheit');
 
-    convertBtn.addEventListener('click', () => {
-      if (celsius.classList.contains('active')) {
-        celsius.classList.remove('active');
-        fahrenheit.classList.add('active');
-      } else {
-        celsius.classList.add('active');
-        fahrenheit.classList.remove('active');
-      }
+    const updateTemp = () => {
+      fahrenheit.classList.toggle('active');
+      celsius.classList.toggle('active');
 
       updateMainWeatherCard(data);
       loadForcastData(data);
+    };
+
+    convertBtn.addEventListener('click', () => {
+      updateTemp();
     });
   };
 
-  const DEFAULT_LOCATION = 'london';
-  const defaultWeather = await weather.fetchWeatherData(DEFAULT_LOCATION);
-  convertTemp(defaultWeather);
-  loadForcastData(defaultWeather);
-  updateMainWeatherCard(defaultWeather);
+  const loadWeather = async (location) => {
+    const newWeather = await weather.fetchWeatherData(location);
+
+    updateMainWeatherCard(newWeather);
+    loadForcastData(newWeather);
+    convertTemp(newWeather);
+
+    return newWeather;
+  };
 
   const searchInput = document.getElementById('search-location');
   const searchIcon = document.querySelector('.search-icon');
 
   const searchAndUpdateWeather = async () => {
     const location = searchInput.value.toUpperCase();
-    if (location === '') return;
-
-    const weatherData = await weather.fetchWeatherData(location);
-    convertTemp(weatherData);
-    updateMainWeatherCard(weatherData);
-    loadForcastData(weatherData);
+    if (location !== '') {
+      const newWeather = await loadWeather(location);
+      convertTemp(newWeather);
+    }
   };
 
+  const loadDefaultWeather = async () => {
+    const defaultLocation = 'London';
+    await loadWeather(defaultLocation);
+  };
+
+  window.addEventListener('load', loadDefaultWeather);
   searchIcon.addEventListener('click', searchAndUpdateWeather);
-  searchInput.addEventListener('search', searchAndUpdateWeather);
+  searchInput.addEventListener('change', searchAndUpdateWeather);
 
   const rightInfo = document.querySelector('.right-info');
   const toggleDisplayIcon = document.querySelector('.toggle-display');

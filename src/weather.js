@@ -61,7 +61,7 @@ const weather = (() => {
 
   const fetchWeatherData = async (location) => {
     try {
-      const endpoint = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location.toUpperCase()}&days=4&aqi=no&alerts=no`;
+      const endpoint = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location.toUpperCase()}&days=3&aqi=no&alerts=no`;
       const response = await fetch(endpoint, { mode: 'cors' });
       if (!response.ok) {
         throw new Error(`${location} is not found`);

@@ -2,7 +2,9 @@
 
 ## Introduction 
 
-This is a basic 'Weather App' used to display weather forecast from [Weather API](https://www.weatherapi.com/).
+This is a basic 'Weather App' used to display weather forecast from [Weather API](https://www.weatherapi.com/). 
+
+This project is for [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-weather-app).
 
 [Live Demo](https://ants-1.github.io/weather-app/)
 
