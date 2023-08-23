@@ -132,7 +132,7 @@ body {
 .days-list {
   display: flex;
   list-style: none;
-  width: 275px;
+  width: 230px;
   margin: 10px 35px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   border: 2px solid var(--light-blue);
@@ -202,7 +202,7 @@ input[type="search"] {
   outline: 1px solid var(--light-blue);
 }
 
-.temp-convert {
+#temp-convert {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -215,7 +215,7 @@ input[type="search"] {
   cursor: pointer;
 }
 
-.temp-convert:hover {
+#temp-convert:hover {
   transform: scale(1.1) perspective(2500px) rotateY(5deg);
   transition: all 0.3s ease;
 }
